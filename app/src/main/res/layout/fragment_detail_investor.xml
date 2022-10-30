@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="job"
+            type="com.example.btl_timviec.model.job.Job" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient">
+
+
+        <ImageView
+            android:id="@+id/imgCoverImage"
+            setCoverImage="@{job.investor.cover_image}"
+            android:layout_width="0dp"
+            android:layout_height="210dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            />
+
+        <ImageView
+            android:id="@+id/imgAvatarEmployer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/imgCoverImage"
+            android:layout_marginStart="20dp"
+            setAvt="@{job.investor.avatar}"/>
+
+        <TextView
+            android:id="@+id/txtFullName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/imgAvatarEmployer"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toTopOf="@id/imgAvatarEmployer"
+            app:layout_constraintEnd_toEndOf="parent"
+            setText="@{job.company_name}"
+            android:text="NGÂN HÀNG TMCP QUÂN ĐỘI MB"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="3"/>
+        <TextView
+            android:id="@+id/txtOther"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/imgAvatarEmployer"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            setText="@{job.investor.other}"
+            android:textColor="@color/white"
+            android:text="25-100 nhân viên"
+            android:drawableLeft="@drawable/ic_baseline_group_24"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@id/imgAvatarEmployer"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgCoverImage"
+            android:paddingBottom="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FAF6F6"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tvDescriptionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giới thiệu công ty"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp" />
+
+                <TextView
+                    android:id="@+id/txtIntroduct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDescriptionTitle"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="15"
+                    android:textSize="16sp"
+                    setText="@{job.investor.introduct}"
+                    android:layout_marginTop="10dp"
+                    android:text="ddaay la mo ta ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta  ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta ddaay la mo ta " />
+
+                <TextView
+                    android:id="@+id/tvLienHe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtIntroduct"
+                    android:layout_marginTop="20dp"
+                    android:text="Liên hệ"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="20dp"/>
+                <TextView
+                    android:id="@+id/txtPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLienHe"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Liên hệ"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="30dp"
+                    android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+                    setText="@{job.investor.phone_number}"/>
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtPhone"
+                    android:layout_marginTop="20dp"
+                    android:text="Địa chỉ"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Liên hệ"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="30dp"
+                    setText="@{job.address}"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="15"
+                    android:drawableLeft="@drawable/ic_baseline_location_24"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

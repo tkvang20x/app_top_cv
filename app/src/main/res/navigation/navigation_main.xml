@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.btl_timviec.fragment.FragmentHome"
+        android:label="FragmentHome" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentDetailJob"
+            app:destination="@id/fragmentDetailJob" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentListJob"
+            app:destination="@id/fragmentListJob" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentHistory"
+            app:destination="@id/fragmentHistory" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailJob"
+        android:name="com.example.btl_timviec.fragment.FragmentDetailJob"
+        android:label="FragmentDetailJob" >
+        <action
+            android:id="@+id/action_fragmentDetailJob_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentDetailJob_to_fragmentDetailInvestor"
+            app:destination="@id/fragmentDetailInvestor" />
+        <action
+            android:id="@+id/action_fragmentDetailJob_to_fragmentListJob"
+            app:destination="@id/fragmentListJob" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCV"
+        android:name="com.example.btl_timviec.fragment.FragmentCV"
+        android:label="FragmentCV" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.btl_timviec.fragment.FragmentProfile"
+        android:label="FragmentProfile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentUpdateUser"
+            app:destination="@id/fragmentUpdateUser" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUpdateUser"
+        android:name="com.example.btl_timviec.fragment.FragmentUpdateProfile"
+        android:label="FragmentUpdateUser" >
+        <action
+            android:id="@+id/action_fragmentUpdateUser_to_fragmentProfile"
+            app:destination="@id/fragmentProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailInvestor"
+        android:name="com.example.btl_timviec.fragment.FragmentDetailInvestor"
+        android:label="FragmentDetailInvestor" >
+        <action
+            android:id="@+id/action_fragmentDetailInvestor_to_fragmentDetailJob"
+            app:destination="@id/fragmentDetailJob" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentListJob"
+        android:name="com.example.btl_timviec.fragment.FragmentListJob"
+        android:label="FragmentListJob" >
+        <action
+            android:id="@+id/action_fragmentListJob_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentListJob_to_fragmentDetailJob"
+            app:destination="@id/fragmentDetailJob" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHistory"
+        android:name="com.example.btl_timviec.fragment.FragmentHistory"
+        android:label="FragmentHistory" >
+        <action
+            android:id="@+id/action_fragmentHistory_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </fragment>
+</navigation>
